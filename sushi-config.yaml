@@ -1,0 +1,48 @@
+# sushi-config.yaml is documented https://fshschool.org/docs/sushi/configuration/
+# ───────────────────────────────────────────────────
+id: example.mds
+canonical: https://path.org/example.mds
+version: 0.0.1
+name: MDS_Exaample
+title: "MDS Example IG"
+description: Example Minimum Data Set example
+releaseLabel: ci-build
+date: 2023-04-20
+status: draft
+license:  CC-BY-4.0
+fhirVersion: 4.0.1
+jurisdiction: 'http://unstats.un.org/unsd/methods/m49/m49.htm#001'
+copyrightYear: 2021+
+
+
+parameters:  # see https://confluence.hl7.org/display/FHIR/Implementation+Guide+Parameters
+  path-resource:
+    - input/resources
+    - fsh-generated/resources
+    - input/examples
+#  path-pages:
+#    - input/pagecontent
+#    - fsh-generated/includes
+  show-inherited-invariants: 'false'
+  usage-stats-opt-out: 'false'
+  logging: progress
+  shownav: 'true'
+  active-tables: 'false'
+  apply-contact: 'true'
+  apply-jurisdiction: 'true'
+  apply-publisher: 'true'
+  apply-version: 'true'
+
+resources:
+# list every example here with a name, description and that exampleBoolean is true; These are used to populate the artifacts page, and are needed to eliminate build warnings 
+# You may delay filling out this section until you approach publication as it is merely a nice to have and eliminates build warnings -- If you do this then you will need above the autoload-resources true
+
+
+pages:
+# itemize here each narrative page. Include assigned section numbers when appropriate. The order they appear here is the order they will appear in the TOC and on the next/prev navigation.
+  index.md:
+    title: MDS Example
+    generation: markdown
+
+menu:
+  Home: index.html
